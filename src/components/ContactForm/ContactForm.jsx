@@ -1,5 +1,4 @@
 import { nanoid } from '@reduxjs/toolkit';
-import PropTypes from 'prop-types';
 
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -38,7 +37,7 @@ function ContactForm() {
     };
 
     const isInContacts = contacts.find(
-      item => item.name.toLowerCase() === contact.name.toLowerCase()
+      item => item.nameInput.toLowerCase() === contact.nameInput.toLowerCase()
     );
 
     if (isInContacts) {
@@ -90,9 +89,5 @@ function ContactForm() {
     </form>
   );
 }
-
-ContactForm.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
-};
 
 export default ContactForm;
